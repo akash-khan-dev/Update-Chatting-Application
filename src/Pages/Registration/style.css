@@ -1,0 +1,58 @@
+.registration {
+  background: url(../../images/bg-1.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.form-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.forms {
+  width: 400px;
+  height: 550px;
+  background-color: rgb(255, 254, 249);
+  padding: 20px 35px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  box-shadow: 1px 4px 8px rgb(137, 133, 133);
+}
+.forms-heading {
+  text-align: center;
+  position: relative;
+}
+.forms-heading::after {
+  position: absolute;
+  content: "";
+  bottom: -30%;
+  left: -10%;
+  width: 120%;
+  height: 1px;
+  background-color: gray;
+}
+.button {
+  margin-top: 35px !important;
+}
+.password {
+  position: relative;
+}
+.eye {
+  position: absolute;
+  top: 50%;
+  right: 4%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+.errors {
+  color: rgba(255, 0, 0, 0.674);
+}
+.signin {
+  text-align: center;
+  margin-top: 20px;
+}
+.navigate {
+  color: rgba(255, 0, 0, 0.674);
+  cursor: pointer;
+}
