@@ -4,7 +4,7 @@ import {
   Route,
   RouterProvider,
 } from "react-router-dom";
-// import { Login } from "./Pages/Login";
+
 import { Registration } from "./Pages/Registration";
 
 function App() {
@@ -12,7 +12,6 @@ function App() {
     createRoutesFromElements(
       <Route>
         <Route path="/registration" element={<Registration />}></Route>
-        {/* <Route path="/login" element={<Login />}></Route> */}
       </Route>
     )
   );

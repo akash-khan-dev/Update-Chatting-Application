@@ -8,3 +8,7 @@ export const SignUp = Yup.object({
     .oneOf([Yup.ref("password"), null], "password don't match")
     .required("please confirm your password"),
 });
+export const SignIn = Yup.object({
+  email: Yup.string().required("email is required"),
+  password: Yup.string().min(6).max(15).required("password is required"),
+});

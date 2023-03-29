@@ -1,39 +1,46 @@
 .registration {
-  background: url(../../images/bg-1.jpg);
+  background: url(../../images/reg-bg.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
-.form-box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-.forms {
-  width: 400px;
-  height: 550px;
-  background-color: rgb(255, 254, 249);
-  padding: 20px 35px;
-  box-sizing: border-box;
-  border-radius: 10px;
-  box-shadow: 1px 4px 8px rgb(137, 133, 133);
+
+.main {
+  padding-top: 100px;
+  padding: 100px 100px;
 }
 .forms-heading {
   text-align: center;
-  position: relative;
 }
-.forms-heading::after {
-  position: absolute;
-  content: "";
-  bottom: -30%;
-  left: -10%;
-  width: 120%;
-  height: 1px;
-  background-color: gray;
+.form-box {
+  background-color: #ffffffaa;
+  padding: 30px 20px;
+  border-radius: 20px;
 }
+.forms-heading h1 {
+  font-family: "Nunito", sans-serif;
+  font-size: 28px;
+  color: #11175d;
+  font-weight: 700;
+}
+.forms-heading p {
+  font-family: "Nunito", sans-serif;
+  font-size: 15px;
+  color: #11175dbc;
+  font-weight: 400;
+}
+.registration-img {
+  margin-top: 50px;
+}
+.registration-img img {
+  width: 110%;
+  height: 110%;
+}
+
 .button {
   margin-top: 35px !important;
+  border-radius: 20px !important;
+  background-color: #fb005d !important;
 }
 .password {
   position: relative;
