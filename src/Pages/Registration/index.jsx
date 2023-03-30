@@ -111,7 +111,7 @@ export const Registration = () => {
                   <form onSubmit={formik.handleSubmit} className="forms">
                     <div className="forms-heading">
                       <h1>Welcome to Registration</h1>
-                      <p>Come on and create your acount</p>
+                      <p>Free register and you can enjoy it</p>
                     </div>
                     <TextField
                       type="name"
@@ -207,7 +207,7 @@ export const Registration = () => {
                     <div className="signin">
                       <p>
                         Already have an account ?
-                        <span className="navigate">
+                        <span className="link">
                           <Link to="/login">Sign In</Link>
                         </span>
                       </p>

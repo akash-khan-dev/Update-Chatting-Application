@@ -1,0 +1,13 @@
+.forgot-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(57, 54, 54);
+  height: 100vh;
+}
+.forgot-main {
+  width: 400px;
+  height: 500px;
+  background-color: #e6e2e2;
+  border-radius: 10px;
+}

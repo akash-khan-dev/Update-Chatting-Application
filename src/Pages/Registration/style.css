@@ -13,7 +13,7 @@
   text-align: center;
 }
 .form-box {
-  background-color: #ffffffaa;
+  background-color: #ffffff;
   padding: 30px 20px;
   border-radius: 20px;
 }
@@ -58,8 +58,13 @@
 .signin {
   text-align: center;
   margin-top: 20px;
+  font-family: "Nunito", sans-serif;
+  font-size: 15px;
+  color: #11175d;
+  font-weight: 400;
 }
-.navigate {
-  color: rgba(255, 0, 0, 0.674);
+.link {
+  color: rgba(255, 0, 0, 0.9);
   cursor: pointer;
+  margin-left: 5px;
 }

@@ -1,8 +1,0 @@
-// import { getAuth } from "firebase/auth";
-export default function NotLoginUser() {
-  const users = localStorage.getItem("chating");
-  const currentUsers = users ? JSON.parse(users) : null;
-  //   const auth = getAuth();
-  //   console.log(auth);
-  console.log(currentUsers);
-}
