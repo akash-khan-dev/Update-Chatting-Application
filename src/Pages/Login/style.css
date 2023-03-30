@@ -1,3 +1,7 @@
+.login {
+  padding: 100px 150px;
+  background-color: #11175df6;
+}
 .login-left {
   background: url(../../images/log-bg.jpg);
   background-position: center;
@@ -65,8 +69,12 @@
   margin-right: 5px;
 }
 .log-main {
-  padding-top: 100px;
-  padding: 100px 150px;
+  padding: 50px 120px 0px 120px;
+}
+.form-boxs {
+  background-color: #ffffff;
+  padding: 50px 20px;
+  border-radius: 20px;
 }
 
 .login-headings h1 {

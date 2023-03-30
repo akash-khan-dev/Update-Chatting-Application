@@ -6,8 +6,38 @@
   height: 100vh;
 }
 .forgot-main {
-  width: 400px;
-  height: 500px;
+  width: 380px;
+  height: 450px;
   background-color: #e6e2e2;
   border-radius: 10px;
+  padding: 20px 40px;
+  box-sizing: border-box;
+  box-shadow: 3px 1px 2px #d7cfcf;
+}
+.forgot-header {
+  text-align: center;
+}
+.forgot-header h2 {
+  font-family: "Nunito", sans-serif;
+  font-size: 28px;
+  color: #131427;
+  font-weight: 700;
+}
+.forgot-icon {
+  height: 100px;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.forgot-icon img {
+  height: 100%;
+}
+
+.forgot-button {
+  margin-top: 30px !important;
+  width: 80%;
+  margin-left: 27px !important;
+}
+.error {
+  color: rgba(255, 0, 0, 0.674);
 }

@@ -8,7 +8,12 @@ import { AiFillEye } from "react-icons/ai";
 import { AiOutlineEyeInvisible } from "react-icons/ai";
 import { ToastContainer, toast } from "react-toastify";
 import BeatLoader from "react-spinners/BeatLoader";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import {
+  getAuth,
+  GoogleAuthProvider,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+} from "firebase/auth";
 import { Link, useNavigate } from "react-router-dom";
 import { SignIn } from "../../Validation/Validation";
 import { ImFacebook } from "react-icons/im";
@@ -77,6 +82,11 @@ export const Login = () => {
       setShowPass("password");
     }
   };
+  // Google signin
+  const Googleprovider = new GoogleAuthProvider();
+  const handleGoogle = () => {
+    signInWithPopup(auth, Googleprovider);
+  };
   return (
     <>
       <div className="login">
@@ -94,7 +104,7 @@ export const Login = () => {
                   <h4>Login with social media</h4>
                   <div className="banner-button">
                     <div className="google-button">
-                      <Button variant="contained">
+                      <Button onClick={handleGoogle} variant="contained">
                         <AiFillGooglePlusCircle /> Google
                       </Button>
                     </div>
@@ -110,7 +120,7 @@ export const Login = () => {
           </Grid>
           <Grid item xs={6}>
             <div className="log-main">
-              <div className="form-box">
+              <div className="form-boxs">
                 <form onSubmit={formik.handleSubmit} className="forms">
                   <div className="login-headings">
                     <h1>Login</h1>
