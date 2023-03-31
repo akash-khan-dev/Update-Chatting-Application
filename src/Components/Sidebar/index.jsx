@@ -6,8 +6,19 @@ import { BiMessageRoundedDots } from "react-icons/bi";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { BsFillGearFill } from "react-icons/bs";
 import { AiOutlineLogin } from "react-icons/ai";
+import { useDispatch } from "react-redux";
+import { loggedIn } from "../../Features/Slice/UserSlice";
+import { getAuth, signOut } from "firebase/auth";
 
 export const Sidebar = () => {
+  const auth = getAuth();
+  const dispatch = useDispatch();
+  const handleLogOut = () => {
+    signOut(auth).then(() => {
+      localStorage.removeItem("chating");
+      dispatch(loggedIn(null));
+    });
+  };
   return (
     <>
       <div className="side-bar">
@@ -30,7 +41,7 @@ export const Sidebar = () => {
             <BsFillGearFill />
           </div>
         </div>
-        <div className="logout-icon">
+        <div onClick={handleLogOut} className="logout-icon">
           <AiOutlineLogin />
         </div>
       </div>
