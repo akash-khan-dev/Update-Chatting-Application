@@ -11,13 +11,18 @@ import { Login } from "./Pages/Login";
 import { Registration } from "./Pages/Registration";
 import { LoginUser } from "./PrivateRoute/LoginUser/LoginUser";
 import { NotLogInUser } from "./PrivateRoute/NotLoginUser";
+import { RootLayOut } from "./RootLayOut";
+import About from "./Pages/About/About";
 
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route>
         <Route element={<LoginUser />}>
-          <Route path="/" element={<Home />}></Route>
+          <Route element={<RootLayOut />}>
+            <Route path="/" element={<Home />}></Route>
+            <Route path="/about" element={<About />}></Route>
+          </Route>
         </Route>
         <Route element={<NotLogInUser />}>
           <Route path="/registration" element={<Registration />}></Route>
