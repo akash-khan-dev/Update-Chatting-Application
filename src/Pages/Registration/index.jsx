@@ -34,6 +34,7 @@ export const Registration = () => {
   const formik = useFormik({
     initialValues: initialValues,
     validationSchema: SignUp,
+
     onSubmit: () => {
       setLoading(true);
       createUserWithEmailAndPassword(
@@ -113,76 +114,124 @@ export const Registration = () => {
                       <h1>Welcome to Registration</h1>
                       <p>Free register and you can enjoy it</p>
                     </div>
-                    <TextField
-                      type="name"
-                      name="fullname"
-                      value={formik.values.fullname}
-                      onChange={formik.handleChange}
-                      fullWidth
-                      id="standard-basic"
-                      label="Full Name"
-                      variant="standard"
-                      margin="normal"
-                    />
-                    {formik.errors.fullname && (
-                      <p className="errors">{formik.errors.fullname}</p>
-                    )}
-                    <TextField
-                      type="email"
-                      name="email"
-                      value={formik.values.email}
-                      onChange={formik.handleChange}
-                      margin="normal"
-                      fullWidth
-                      id="standard-basic"
-                      label="Email"
-                      variant="standard"
-                    />
-                    {formik.errors.email && formik.touched.email && (
-                      <p className="errors">{formik.errors.email}</p>
-                    )}
-                    <div className="password">
+                    {formik.errors.fullname ? (
                       <TextField
-                        type={showpass}
-                        name="password"
-                        value={formik.values.password}
+                        name="fullname"
+                        fullWidth
+                        onChange={formik.handleChange}
+                        error
+                        id="standard-error"
+                        label={formik.errors.fullname}
+                        variant="standard"
+                      />
+                    ) : (
+                      <TextField
+                        type="name"
+                        name="fullname"
+                        value={formik.values.fullname}
+                        onChange={formik.handleChange}
+                        fullWidth
+                        id="standard-basic"
+                        label="Full Name"
+                        variant="standard"
+                        margin="normal"
+                      />
+                    )}
+
+                    {formik.errors.email && formik.touched.email ? (
+                      <TextField
+                        name="email"
+                        fullWidth
+                        onChange={formik.handleChange}
+                        error
+                        id="standard-error"
+                        label={formik.errors.email}
+                        variant="standard"
+                      />
+                    ) : (
+                      <TextField
+                        type="email"
+                        name="email"
+                        value={formik.values.email}
                         onChange={formik.handleChange}
                         margin="normal"
                         fullWidth
                         id="standard-basic"
-                        label="Password"
+                        label="Email"
                         variant="standard"
                       />
-                      {showpass === "password" ? (
-                        <div onClick={handleShowPassword} className="eye">
-                          <AiFillEye />
-                        </div>
-                      ) : (
-                        <div onClick={handleShowPassword} className="eye">
-                          <AiOutlineEyeInvisible />
-                        </div>
-                      )}
-                    </div>
-                    {formik.errors.password && formik.touched.password && (
-                      <p className="errors">{formik.errors.password}</p>
                     )}
-                    <TextField
-                      type="password"
-                      name="confirmpassword"
-                      value={formik.values.confirmpassword}
-                      onChange={formik.handleChange}
-                      margin="normal"
-                      fullWidth
-                      id="standard-basic"
-                      label="Confirm Password"
-                      variant="standard"
-                    />
+                    {formik.errors.password && formik.touched.password ? (
+                      <div className="password">
+                        <TextField
+                          name="password"
+                          fullWidth
+                          onChange={formik.handleChange}
+                          error
+                          id="standard-error"
+                          label={formik.errors.password}
+                          variant="standard"
+                        />
+                        {showpass === "password" ? (
+                          <div onClick={handleShowPassword} className="eye">
+                            <AiFillEye />
+                          </div>
+                        ) : (
+                          <div onClick={handleShowPassword} className="eye">
+                            <AiOutlineEyeInvisible />
+                          </div>
+                        )}
+                      </div>
+                    ) : (
+                      <div className="password">
+                        <TextField
+                          type={showpass}
+                          name="password"
+                          value={formik.values.password}
+                          onChange={formik.handleChange}
+                          margin="normal"
+                          fullWidth
+                          id="standard-basic"
+                          label="Password"
+                          variant="standard"
+                        />
+                        {showpass === "password" ? (
+                          <div onClick={handleShowPassword} className="eye">
+                            <AiFillEye />
+                          </div>
+                        ) : (
+                          <div onClick={handleShowPassword} className="eye">
+                            <AiOutlineEyeInvisible />
+                          </div>
+                        )}
+                      </div>
+                    )}
+
                     {formik.errors.confirmpassword &&
-                      formik.touched.confirmpassword && (
-                        <p className="errors">
-                          {formik.errors.confirmpassword}
-                        </p>
-                      )}
+                    formik.touched.confirmpassword ? (
+                      <TextField
+                        type="password"
+                        name="confirmpassword"
+                        fullWidth
+                        onChange={formik.handleChange}
+                        error
+                        id="standard-error"
+                        label={formik.errors.confirmpassword}
+                        variant="standard"
+                      />
+                    ) : (
+                      <TextField
+                        type="password"
+                        name="confirmpassword"
+                        value={formik.values.confirmpassword}
+                        onChange={formik.handleChange}
+                        margin="normal"
+                        fullWidth
+                        id="standard-basic"
+                        label="Confirm Password"
+                        variant="standard"
+                      />
+                    )}
 
                     {loading ? (
                       <Button
